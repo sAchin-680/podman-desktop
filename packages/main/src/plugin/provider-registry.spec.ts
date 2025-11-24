@@ -517,7 +517,10 @@ describe('a Kubernetes provider is registered', async () => {
   test('should send provider-change when status of vm changes', async () => {
     // status unchanged, do not send event
     vi.advanceTimersByTime(2005);
-    expect(apiSenderSendMock).not.toHaveBeenCalledWith('provider-change', expect.anything());
+    expect(apiSenderSendMock).not.toHaveBeenCalledWith(
+      'provider-change',
+      expect.objectContaining({} as Record<string, unknown>),
+    );
 
     connection.status = (): ProviderConnectionStatus => 'stopped';
 
@@ -527,14 +530,20 @@ describe('a Kubernetes provider is registered', async () => {
   });
 
   test('should send provider-change when Kubernetes provider disposed', async () => {
-    expect(apiSenderSendMock).not.toHaveBeenCalledWith('provider-change', expect.anything());
+    expect(apiSenderSendMock).not.toHaveBeenCalledWith(
+      'provider-change',
+      expect.objectContaining({} as Record<string, unknown>),
+    );
 
     disposable.dispose();
     expect(apiSenderSendMock).toHaveBeenCalledWith('provider-change', {});
   });
 
   test('should not send provider-change when Kubernetes provider disposed and status changes', async () => {
-    expect(apiSenderSendMock).not.toHaveBeenCalledWith('provider-change', expect.anything());
+    expect(apiSenderSendMock).not.toHaveBeenCalledWith(
+      'provider-change',
+      expect.objectContaining({} as Record<string, unknown>),
+    );
 
     disposable.dispose();
     expect(apiSenderSendMock).toHaveBeenCalledWith('provider-change', {});
