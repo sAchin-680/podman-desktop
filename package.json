@@ -156,7 +156,7 @@
     "@vitest/eslint-plugin": "^1.6.16",
     "cross-env": "10.1.0",
     "dts-for-context-bridge": "0.7.1",
-    "electron": "41.5.0",
+    "electron": "42.0.0",
     "electron-builder": "26.8.2",
     "electron-builder-notarize": "^1.5.2",
     "eslint": "^10.3.0",
@@ -165,7 +165,7 @@
     "eslint-plugin-etc": "^2.0.3",
     "eslint-plugin-file-progress": "^4.0.0",
     "eslint-plugin-import": "^2.32.0",
-    "eslint-plugin-n": "^17.23.1",
+    "eslint-plugin-n": "^18.0.1",
     "eslint-plugin-no-null": "^1.0.2",
     "eslint-plugin-redundant-undefined": "^1.0.0",
     "eslint-plugin-simple-import-sort": "^13.0.0",
@@ -236,7 +236,8 @@
       "smol-toml": "^1.6.1",
       "follow-redirects": "^1.16.0",
       "uuid": "^14.0.0",
-      "postcss": ">=8.5.12"
+      "postcss": ">=8.5.12",
+      "ip-address": ">=10.1.1"
     },
     "patchedDependencies": {
       "docker-modem": "patches/docker-modem.patch"
