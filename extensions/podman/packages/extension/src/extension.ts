@@ -1881,6 +1881,7 @@ export async function deactivate(): Promise<void> {
   listeners.clear();
   podmanMachinesInfo.clear();
   podmanMachinesErrors.clear();
+  podmanProviderError = undefined;
   currentConnections.clear();
   containerProviderConnections.clear();
 
